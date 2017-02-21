@@ -20,21 +20,5 @@ var registerIntentHandlers = function (intentHandlers, skillContext) {
             response.tellWithCard(speechOutput, "Message", currentMessage);
         });
     };
-
-    intentHandlers['AMAZON.CancelIntent'] = function (intent, session, response) {
-        if (skillContext.needMoreHelp) {
-            response.tell('Okay.  Whenever you\'re ready, you can start giving points to the players in your game.');
-        } else {
-            response.tell('');
-        }
-    };
-
-    intentHandlers['AMAZON.StopIntent'] = function (intent, session, response) {
-        if (skillContext.needMoreHelp) {
-            response.tell('Okay.  Whenever you\'re ready, you can start giving points to the players in your game.');
-        } else {
-            response.tell('');
-        }
-    };
 };
 exports.register = registerIntentHandlers;
